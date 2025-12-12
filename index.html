@@ -1,45 +1,126 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abdullah | Media Designer</title>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullah | UX/UI Designer</title>
+    
+    <!-- Loading Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Outfit', 'sans-serif'],
-              display: ['Space Grotesk', 'sans-serif'],
-            },
-            colors: {
-              brand: {
-                dark: '#0a0a0a',
-                gray: '#171717',
-                accent: '#6366f1', // Indigo 500
-                light: '#f5f5f5'
-              }
-            }
-          }
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Font: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Basic Settings */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-      }
-    </script>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
-  }
-}
-</script>
+
+        /* Glow Effects */
+        .glow-bg {
+            position: fixed;
+            top: -20%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .glow-bg-2 {
+            position: fixed;
+            bottom: -20%;
+            right: -10%;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism Navigation */
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Text Gradient Class */
+        .text-gradient {
+            background: linear-gradient(to right, #fff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
-  <body class="bg-brand-dark text-white antialiased selection:bg-brand-accent selection:text-white">
-    <div id="root"></div>
-  </body>
+<body class="antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Background Glow -->
+    <div class="glow-bg"></div>
+    <div class="glow-bg-2"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 py-6 px-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight">Abdullah<span class="text-indigo-500">.</span></a>
+            <!-- Empty Nav since all sections are removed -->
+        </div>
+    </nav>
+
+    <!-- Hero Section (Centered) -->
+    <main class="flex-grow flex items-center justify-center relative">
+        <div class="max-w-6xl w-full px-6">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-indigo-300 mb-6">
+                    <span class="flex h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+                    Available for new projects
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                    Hey, I'm Abdullah.<br>
+                    <span class="text-gradient">UX/UI & Media Designer</span>
+                </h1>
+                
+                <p class="text-xl text-gray-400 leading-relaxed mb-10 max-w-2xl">
+                    I craft digital experiences that not only look good but work seamlessly. Creative, detail-oriented, and always user-centric.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="mailto:abdullah.omar.q@gmail.de" class="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-colors text-center inline-flex items-center justify-center">
+                        <i data-lucide="mail" class="mr-2 w-4 h-4"></i>
+                        Get in touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-600 text-sm w-full border-t border-white/5">
+        <div class="flex justify-center space-x-8 mb-4">
+            <a href="https://www.linkedin.com/in/abdullah-omar-7748a0212/1" class="text-gray-400 hover:text-white transition-colors font-medium">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/abdullah-omar-7748a0212/" class="text-gray-400 hover:text-white transition-colors font-medium">Instagram</a>
+        </div>
+        <p>&copy; 2024 Abdullah. Media & UX/UI Design.</p>
+    </footer>
+
+    <!-- Script for Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
 </html>
